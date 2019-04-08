@@ -1,7 +1,8 @@
-package com.dragon.myreadhub;
+package com.dragon.myreadhub.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import com.dragon.myreadhub.R;
 
 public class SplashActivity extends AppCompatActivity
 {

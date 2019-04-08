@@ -3,4 +3,43 @@
     <color name="colorPrimary">#19A688</color>
     <color name="colorPrimaryDark">#19A688</color>
     <color name="colorAccent">#19A688</color>
+
+    <color name="gray">#AFAFAF</color>
+    <color name="black">#000000</color>
+    <color name="orange">#CC6600</color>
+    <color name="red">#FF0000</color>
+    <color name="yellow2">#FE8900</color>
+    <color name="white">#ffffff</color>
+
+    <!-- 新界面颜色值-->
+    <color name="color_red_ff2524">#ff2524</color>
+    <color name="color_red_e64240">#e64240</color>
+    <color name="color_green_2fc65e">#2fc65e</color>
+    <color name="color_green_34cb80">#34cb80</color>
+    <color name="color_green_16cc82">#16cc82</color>
+    <color name="color_green_bee7d5">#bee7d5</color>
+    <color name="color_green_15cc82">#15cc82</color>
+
+    <color name="color_gray_444444">#444444</color>
+    <color name="color_gray_333333">#333333</color>
+    <color name="color_gray_50000000">#50000000</color>
+    <color name="color_gray_999999">#999999</color>
+    <color name="color_gray_a8a7a7">#a8a7a7</color>
+    <color name="color_gray_b2b2b2">#B2B2B2</color>
+    <color name="color_gray_d7d7d7">#d7d7d7</color>
+    <color name="color_gray_979797">#979797</color>
+    <color name="color_gray_e0e0e0">#E0E0E0</color>
+    <color name="color_gray_e5e5e5">#E5E5E5</color>
+    <color name="color_gray_eeeeee">#EEEEEE</color>
+    <color name="color_gray_efefef">#efefef</color>
+    <color name="color_gray_f2f2f2">#F2F2F2</color>
+    <color name="color_gray_f4f4f4">#F4F4F4</color>
+    <color name="color_gray_f6f6f6">#F6F6F6</color>
+    <color name="color_gray_fafafa">#FAFAFA</color>
+    <color name="color_yellow_f19d5d">#f19d5d</color>
+    <color name="color_black_111111">#111111</color>
+    <color name="color_black_262626">#262626</color>
+    <color name="color_black_434343">#434343</color>
+    <color name="color_black_49494b">#49494B</color>
+
 </resources>

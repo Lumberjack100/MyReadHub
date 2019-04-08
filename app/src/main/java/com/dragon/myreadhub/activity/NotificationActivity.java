@@ -1,4 +1,4 @@
-package com.dragon.myreadhub;
+package com.dragon.myreadhub.activity;
 
 import android.annotation.TargetApi;
 import android.app.Notification;
@@ -12,23 +12,21 @@ import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import com.dragon.myreadhub.R;
 
-public class MainActivity extends AppCompatActivity
+public class NotificationActivity extends AppCompatActivity
 {
-    @BindView(R.id.btn)
-    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_notification);
         ButterKnife.bind(this);
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
         {
@@ -52,7 +50,6 @@ public class MainActivity extends AppCompatActivity
         {
             case R.id.btn:
 
-                showNotificaiton();
                 break;
 
             case R.id.btnSendChatMsg:
@@ -72,14 +69,6 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    private void showNotificaiton()
-    {
-
-        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-        Notification notification = builder.setContentTitle("这是通知标题").setContentText("这是通知内容").setWhen(System.currentTimeMillis()).setSmallIcon(R.mipmap.ic_small_notification).setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher)).build();
-        manager.notify(1, notification);
-    }
 
 
     public void sendChatMsg()
@@ -98,7 +87,14 @@ public class MainActivity extends AppCompatActivity
             }
         }
 
-        Notification notification = new NotificationCompat.Builder(this, "chat").setContentTitle("收到一条聊天消息").setContentText("今天中午吃什么？").setWhen(System.currentTimeMillis()).setSmallIcon(R.mipmap.ic_small_notification).setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher)).setAutoCancel(true)
+        Notification notification = new NotificationCompat
+                .Builder(this, "chat")
+                .setContentTitle("收到一条聊天消息")
+                .setContentText("今天中午吃什么？")
+                .setWhen(System.currentTimeMillis())
+                .setSmallIcon(R.mipmap.ic_small_notification)
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
+                .setAutoCancel(true)
                 .setNumber(3).build();
         manager.notify(1, notification);
     }
