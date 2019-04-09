@@ -42,4 +42,13 @@
     <color name="color_black_434343">#434343</color>
     <color name="color_black_49494b">#49494B</color>
 
+    <color name="wall">#fff5f5f5</color>
+    <color name="text_primary_dark">#de000000</color>
+    <color name="white_text">#FFF</color>
+    <color name="white_translucent_light">#66FFFFFF</color>
+    <color name="white_translucent_dark">#99FFFFFF</color>
+    <color name="translucent">#0000</color>
+    <color name="primary_text">#444444</color>
+    <color name="secondary_text">#757575</color>
+
 </resources>

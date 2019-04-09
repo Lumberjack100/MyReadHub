@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">龙行新闻</string>
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -16,4 +14,125 @@
 
     <string name="action_share">Share</string>
     <string name="action_reply">Reply</string>
+
+
+
+    <!-- 全局 -->
+    <string name="app_name">龙行新闻</string>
+    <string name="world">世界</string>
+    <string name="follow">关注</string>
+    <string name="hot">热门</string>
+    <string name="login_status_expired">登录状态已过期</string>
+    <string name="unknown_error">发生未知错误</string>
+    <string name="agree">同 意</string>
+    <string name="send">发 送</string>
+    <string name="gif_format_error">GIF图片格式不正确</string>
+    <string name="no_more_content">没有更多内容了</string>
+    <string name="save">保存</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="give_up">舍弃</string>
+    <string name="ignore">忽略</string>
+    <string name="delete">删除</string>
+    <string name="settings">设置</string>
+    <string name="share">分享</string>
+    <string name="report">举报</string>
+    <string name="remind">提醒</string>
+    <string name="forward">继续</string>
+    <string name="draft_box">草稿箱</string>
+    <string name="draft">草稿</string>
+    <string name="search">搜索</string>
+    <string name="take_photo">拍照</string>
+    <string name="your_album">你的相册</string>
+    <string name="press_again_to_exit">再按一次退出%1$s</string>
+    <string name="currently_not_supported">该功能即将开放，敬请期待</string>
+    <string name="delete_failed">删除失败</string>
+    <string name="user_info_status_abnormal">当前登录状态存在异常</string>
+    <string name="operation_failed_without_sdcard">您的手机没有SD卡，无法完成操作</string>
+    <string name="your_phone_does_not_install_qq">您的手机还没有安装QQ</string>
+    <string name="your_phone_does_not_install_wechat">您的手机还没有安装微信</string>
+    <string name="your_phone_does_not_install_weibo">您的手机还没有安装微博</string>
+
+    <!-- 网络 -->
+    <string name="network_connect_error">网络连接异常</string>
+    <string name="network_connect_timeout">网络连接超时</string>
+    <string name="no_route_to_host">无法连接到服务器</string>
+    <string name="network_response_code_error">服务器状态码异常：</string>
+    <string name="bad_network_view_tip">您的网络不给力，点击屏幕可重新加载</string>
+    <string name="load_failed_click_to_reload">加载失败，点击可重新加载</string>
+
+    <!-- 选择图片 -->
+    <string name="pick_gif_pic">选择GIF图</string>
+    <string name="select_from_album">从相册中选择</string>
+    <string name="select_from_sdcard">从SD卡中选择</string>
+    <string name="use_gif_url">使用图片URL地址</string>
+
+    <!-- 时间和日期 -->
+    <string name="minutes_ago">分钟前</string>
+    <string name="hours_ago">小时前</string>
+    <string name="days_ago">天前</string>
+    <string name="weeks_ago">周前</string>
+    <string name="year">年</string>
+    <string name="month">个月</string>
+    <string name="day">天</string>
+    <string name="hour">小时</string>
+    <string name="minute">分钟</string>
+
+    <!-- 设置 -->
+    <string name="title_gif_settings">GIF设置</string>
+    <string name="key_gif_play_control">gif_play_control</string>
+    <string name="title_gif_play_control">GIF播放控制</string>
+    <string name="key_alert_for_big_gif">alert_for_big_gif</string>
+    <string name="title_alert_when_play_big_gif_using_roaming">流量播放大图提醒</string>
+    <string name="summary_alert_when_play_big_gif_using_roaming">使用手机流量播放较大GIF图时进行提醒</string>
+    <string name="key_auto_refresh">auto_refresh</string>
+    <string name="title_refresh_feeds_when_app_started">自动刷新内容</string>
+    <string name="summary_refresh_feeds_when_app_started">打开应用后为您智能刷新最新的内容</string>
+    <string name="title_general">常规</string>
+    <string name="key_check_update">check_update</string>
+    <string name="title_check_update">自动检查更新</string>
+    <string name="summary_check_update">启动时自动检查是否有新版本</string>
+    <string name="key_clean_cache">clean_cache</string>
+    <string name="title_clean_cache">清理缓存</string>
+    <string name="summary_clean_cache">清理应用内所有的图片缓存</string>
+    <string name="key_app_info">app_info</string>
+    <string name="title_app_info">应用信息</string>
+    <string name="summary_app_info">前往设置中的应用信息界面</string>
+    <string name="key_about">about</string>
+    <string name="title_about">关于</string>
+    <string name="key_user_terms">user_terms</string>
+    <string name="title_user_terms">用户协议</string>
+    <string name="title_logout">退出当前账号</string>
+    <string name="key_logout">logout</string>
+    <string name="check_update_in_about_if_you_need">如需更新，请到关于界面手动进行检查</string>
+    <string name="are_your_sure_to_clean_all_caches">确定要清理掉 %1$s 图片缓存吗？</string>
+    <string name="no_cache_to_clean">没有缓存需要清理</string>
+    <string name="clean_cache_success">缓存清理成功</string>
+    <string name="key_loop_gif_play">loop_gif_play</string>
+    <string name="title_loop_gif_play">循环播放GIF</string>
+    <string name="summary_loop_gif_play">GIF图播放结束后自动重头播放</string>
+    <string name="key_gif_play_speed">gif_play_speed</string>
+    <string name="title_gif_play_speed">GIF播放速度</string>
+    <string name="summary_gif_play_speed">选择GIF图的播放倍速</string>
+    <string name="open_source_project_list">开源项目列表</string>
+    <string name="version">版本</string>
+    <string name="check_update">检查版本更新</string>
+    <string name="download_official">下载正式版</string>
+    <string name="unable_goto_app_store">无法跳转至应用商店，请到主流应用商店搜索趣享GIF下载。</string>
+    <string name="thanks_to">趣享GIF的完成离不开以下开源项目的卓越贡献，在此对这些开源项目表示特别感谢。</string>
+
+    <!-- 版本更新 -->
+    <string name="find_new_version">发现新版本</string>
+    <string name="install_right_now">立刻更新</string>
+    <string name="install_next_time">下次再说</string>
+    <string name="is_upgrading">正在下载新版本</string>
+    <string name="cancel_upgrade">取消更新</string>
+    <string name="upgrade_is_canceled">已取消更新</string>
+    <string name="sorry_upgrade_failed">很抱歉，更新出现异常</string>
+    <string name="retry">重试</string>
+    <string name="zero_percent">0%</string>
+    <string name="no_sdcard_found_could_not_upgrade">您的手机未发现SD卡，将进行无法更新</string>
+    <string name="check_new_version_failed">检查版本更新失败</string>
+    <string name="is_already_latest_version">已安装最新版本</string>
+
 </resources>

@@ -30,7 +30,7 @@ ext {
     configs = [
             compileSdkVersion : 28,
             targetSdkVersion : 28,
-            minSdkVersion : 19
+            minSdkVersion : 16
     ]
 
     libs = [

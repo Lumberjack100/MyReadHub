@@ -13,7 +13,7 @@ import com.dragon.myreadhub.fragment.MyFragmentPageAdapter;
 import com.dragon.myreadhub.fragment.NewsFragment;
 import com.dragon.myreadhub.fragment.ThirdFragment;
 import com.dragon.myreadhub.fragment.WeatherFragment;
-import com.dragon.myreadhub.inter.Extras;
+import com.dragon.myreadhub.Interfaces.Extras;
 
 import java.util.LinkedHashMap;
 

@@ -1,4 +1,4 @@
-package com.dragon.myreadhub.inter;
+package com.dragon.myreadhub.Interfaces;
 
 public interface Extras
 {
