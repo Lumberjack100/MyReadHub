@@ -41,7 +41,6 @@ public class MyReadHub
     {
         context = c;
         handler = new Handler(Looper.getMainLooper());
-//        refreshLoginState();
     }
 
     /**
@@ -82,66 +81,7 @@ public class MyReadHub
         return context.getPackageName();
     }
 
-    /**
-     * 注销用户登录。
-     */
-  /*  public static void logout()
-    {
-        SharedUtil.clear(Const.Auth.USER_ID);
-        SharedUtil.clear(Const.Auth.TOKEN);
-        SharedUtil.clear(Const.Auth.LOGIN_TYPE);
-        SharedUtil.clear(Const.User.AVATAR);
-        SharedUtil.clear(Const.User.BG_IMAGE);
-        SharedUtil.clear(Const.User.DESCRIPTION);
-        SharedUtil.clear(Const.User.NICKNAME);
-        SharedUtil.clear(Const.Feed.MAIN_PAGER_POSITION);
-        GifFun.refreshLoginState();
-    }*/
 
-    /**
-     * 获取当前登录用户的id。
-     *
-     * @return 当前登录用户的id。
-     */
-    public static long getUserId()
-    {
-        return userId;
-    }
 
-    /**
-     * 获取当前登录用户的token。
-     *
-     * @return 当前登录用户的token。
-     */
-    public static String getToken()
-    {
-        return token;
-    }
 
-    /**
-     * 获取当前登录用户的登录类型。
-     *
-     * @return 当前登录用户登录类型。
-     */
-    public static int getLoginType()
-    {
-        return loginType;
-    }
-
-    /**
-     * 刷新用户的登录状态。
-     */
-   /* public static void refreshLoginState()
-    {
-        long u = SharedUtil.read(Const.Auth.USER_ID, 0L);
-        String t = SharedUtil.read(Const.Auth.TOKEN, "");
-        int lt = SharedUtil.read(Const.Auth.LOGIN_TYPE, -1);
-        isLogin = u > 0 && !TextUtils.isEmpty(t) && lt >= 0;
-        if (isLogin)
-        {
-            userId = u;
-            token = t;
-            loginType = lt;
-        }
-    }*/
 }
