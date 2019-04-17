@@ -1,6 +1,5 @@
 package com.dragon.myreadhub.activity;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,6 +12,7 @@ import android.support.v7.app.AlertDialog;
 import android.view.MotionEvent;
 import com.dragon.myreadhub.Interfaces.PermissionListener;
 import com.dragon.myreadhub.R;
+import com.dragon.myreadhub.constant.PermissionConstants;
 import com.dragon.myreadhub.utils.GlobalUtil;
 
 import java.util.ArrayList;
@@ -59,7 +59,7 @@ public class SplashActivity extends BaseActivity
     private void refreshPermissionStatus()
     {
         ArrayList<String> permissions = new ArrayList<>(2);
-        permissions.add("android.permission.WRITE_EXTERNAL_STORAGE");
+        permissions.add(PermissionConstants.WRITE_EXTERNAL_STORAGE);
 
         handlePermissions(permissions, new PermissionListener()
         {
@@ -75,8 +75,9 @@ public class SplashActivity extends BaseActivity
                 boolean allNeverAskAgain = true;
                 for (String deniedPermission : deniedPermissions)
                 {
-                    if (ActivityCompat.shouldShowRequestPermissionRationale(SplashActivity.this, Manifest.permission.READ_CONTACTS))
+                    if (ActivityCompat.shouldShowRequestPermissionRationale(SplashActivity.this, deniedPermission))
                     {
+                        showRequestPermissionDialog();
                         allNeverAskAgain = false;
                         break;
                     }
@@ -108,5 +109,20 @@ public class SplashActivity extends BaseActivity
     protected void permissionsGranted()
     {
         handler.sendMessageDelayed(handler.obtainMessage(-1), 3000);
+    }
+
+    private void showRequestPermissionDialog()
+    {
+        AlertDialog dialog = new AlertDialog.Builder(activity, R.style.MyReadHubAlertDialogStyle)
+                .setMessage(GlobalUtil.getString(R.string.allow_storage_permission_please))
+                .setPositiveButton(GlobalUtil.getString(R.string.ok), new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        refreshPermissionStatus();
+                    }
+                }).create();
+        dialog.show();
     }
 }
