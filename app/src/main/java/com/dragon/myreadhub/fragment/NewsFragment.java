@@ -5,7 +5,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import com.dragon.myreadhub.R;
+import okhttp3.*;
+
+import java.io.IOException;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,14 +21,15 @@ import com.dragon.myreadhub.R;
  */
 public class NewsFragment extends BaseFragment
 {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    @BindView(R.id.textResponse)
+    TextView textResponse;
 
 
     public NewsFragment()
@@ -62,8 +70,66 @@ public class NewsFragment extends BaseFragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_news, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_news, container, false);
+        ButterKnife.bind(rootView);
+
+
+        return rootView;
+    }
+
+
+    @OnClick({R.id.btnTest})
+    public void onClick(View v)
+    {
+        switch (v.getId())
+        {
+            case R.id.btnTest:
+
+                try
+                {
+                    testOkhttp("https://raw.github.com/square/okhttp/master/README.md");
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+                break;
+
+            default:
+                break;
+        }
+    }
+
+
+    private void testOkhttp(String url) throws IOException
+    {
+        OkHttpClient mOkHttpClient = new OkHttpClient();
+
+        Request request = new Request.Builder().url(url).build();
+
+//        try (Response response = mOkHttpClient.newCall(request).execute())
+//        {
+//            return response.body().string();
+//        }
+
+        Call call = mOkHttpClient.newCall(request);
+        call.enqueue(new Callback()
+        {
+            @Override
+            public void onFailure(Call call, IOException e)
+            {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException
+            {
+                String responseStr = response.body().string();
+                System.out.println(response);
+
+            }
+        });
+
     }
 
 

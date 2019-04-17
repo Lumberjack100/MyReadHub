@@ -17,7 +17,7 @@ import com.dragon.myreadhub.Interfaces.Extras;
 
 import java.util.LinkedHashMap;
 
-public class MainActivity extends BaseCompatActivity implements ViewPager.OnPageChangeListener
+public class MainActivity extends BaseActivity implements ViewPager.OnPageChangeListener
 {
 
     @BindView(R.id.sliding_tabs)

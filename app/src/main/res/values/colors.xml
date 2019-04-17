@@ -51,4 +51,14 @@
     <color name="primary_text">#444444</color>
     <color name="secondary_text">#757575</color>
 
+    <color name="orange_button">#FF9B07</color>
+    <color name="liked">#ED5E32</color>
+    <color name="ripple_light">#77ffffff</color>
+    <color name="ripple_light_grey">#77bbbbbb</color>
+    <color name="ripple_dark_grey">#77555555</color>
+    <color name="ripple_dark_grey_pressed">#77333333</color>
+    <color name="split">#e6e6e6</color>
+    <color name="refeed_bg">#f7f7f7</color>
+    <color name="refeed_nickname">#507daf</color>
+
 </resources>

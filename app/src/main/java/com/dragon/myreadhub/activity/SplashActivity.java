@@ -1,14 +1,16 @@
 package com.dragon.myreadhub.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import com.dragon.myreadhub.R;
 
-public class SplashActivity extends BaseCompatActivity
+public class SplashActivity extends BaseActivity
 {
 
+    @SuppressLint("HandlerLeak")
     private Handler handler = new Handler()
     {
         public void handleMessage(android.os.Message msg)

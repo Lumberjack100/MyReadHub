@@ -1,7 +1,8 @@
 package com.dragon.myreadhub.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import com.dragon.myreadhub.R;
 
 public class AboutActivity extends AppCompatActivity
 {
