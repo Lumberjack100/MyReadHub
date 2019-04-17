@@ -49,6 +49,7 @@
     <string name="your_phone_does_not_install_qq">您的手机还没有安装QQ</string>
     <string name="your_phone_does_not_install_wechat">您的手机还没有安装微信</string>
     <string name="your_phone_does_not_install_weibo">您的手机还没有安装微博</string>
+    <string name="allow_storage_permission_please">请在权限管理中允许存储空间权限</string>
 
     <!-- 网络 -->
     <string name="network_connect_error">网络连接异常</string>

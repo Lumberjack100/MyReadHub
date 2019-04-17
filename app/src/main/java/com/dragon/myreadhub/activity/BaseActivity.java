@@ -3,11 +3,15 @@ package com.dragon.myreadhub.activity;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.support.annotation.CallSuper;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -32,6 +36,7 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 
 /**
  * 应用程序中所有Activity的基类。
@@ -388,8 +393,85 @@ public abstract class BaseActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    public void permissionsGranted()
+
+    /**
+     * 检查和处理运行时权限，并将用户授权的结果通过PermissionListener进行回调。
+     *
+     * @param permissions 要检查和处理的运行时权限数组
+     * @param listener    用于接收授权结果的监听器
+     */
+    protected void handlePermissions(ArrayList<String> permissions, PermissionListener listener)
     {
+        if (permissions == null || activity == null)
+        {
+            return;
+        }
+
+        mListener = listener;
+        ArrayList<String> requestPermissionList = new ArrayList<>();
+        for (String permission : permissions)
+        {
+            if (ContextCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED)
+            {
+                requestPermissionList.add(permission);
+            }
+        }
+
+        if (!requestPermissionList.isEmpty())
+        {
+            ActivityCompat.requestPermissions(activity, requestPermissionList.toArray(new String[0]), 1);
+        }
+        else
+        {
+            listener.onGranted();
+        }
+    }
+
+    protected void permissionsGranted()
+    {
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+    {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        switch (requestCode)
+        {
+            case 1:
+
+                if (grantResults.length == 0)
+                {
+                    return;
+                }
+
+                ArrayList<String> deniedPermissions = new ArrayList<>();
+                for (int i = 0; i < grantResults.length; i++)
+                {
+                    int grantResult = grantResults[i];
+                    String permission = permissions[i];
+                    if (grantResult != PackageManager.PERMISSION_GRANTED)
+                    {
+                        deniedPermissions.add(permission);
+                    }
+                }
+
+                if (deniedPermissions.isEmpty())
+                {
+                    if (mListener != null)
+                        mListener.onGranted();
+                }
+                else
+                {
+                    if (mListener != null)
+                        mListener.onDenied(deniedPermissions);
+                }
+                break;
+
+
+            default:
+                break;
+        }
     }
 
     @CallSuper

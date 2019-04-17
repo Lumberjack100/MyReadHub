@@ -71,7 +71,7 @@ public class NewsFragment extends BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         View rootView = inflater.inflate(R.layout.fragment_news, container, false);
-        ButterKnife.bind(rootView);
+        ButterKnife.bind(this, rootView);
 
 
         return rootView;
@@ -118,18 +118,16 @@ public class NewsFragment extends BaseFragment
             @Override
             public void onFailure(Call call, IOException e)
             {
-
+                String ss = "";
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException
             {
                 String responseStr = response.body().string();
-                System.out.println(response);
-
+                textResponse.setText(responseStr);
             }
         });
-
     }
 
 

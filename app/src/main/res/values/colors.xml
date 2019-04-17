@@ -11,6 +11,11 @@
     <color name="yellow2">#FE8900</color>
     <color name="white">#ffffff</color>
 
+    <color name="scrim">#99323232</color>
+    <color name="light_scrim">#11323232</color>
+    <color name="black_scrim">#C0000000</color>
+    <color name="invisible_scrim">#00000000</color>
+
     <!-- 新界面颜色值-->
     <color name="color_red_ff2524">#ff2524</color>
     <color name="color_red_e64240">#e64240</color>

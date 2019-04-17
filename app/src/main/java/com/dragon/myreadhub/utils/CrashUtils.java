@@ -33,6 +33,7 @@ public class CrashUtils
     private static int versionCode;
 
     private static final String FILE_SEP = System.getProperty("file.separator");
+
     @SuppressLint("SimpleDateFormat")
     private static final Format FORMAT = new SimpleDateFormat("MM-dd HH-mm-ss");
 
@@ -79,15 +80,7 @@ public class CrashUtils
 
                 final String time = FORMAT.format(new Date(System.currentTimeMillis()));
                 final StringBuilder sb = new StringBuilder();
-                final String head = "************* Log Head ****************" +
-                        "\nTime Of Crash      : " + time +
-                        "\nDevice Manufacturer: " + Build.MANUFACTURER +
-                        "\nDevice Model       : " + Build.MODEL +
-                        "\nAndroid Version    : " + Build.VERSION.RELEASE +
-                        "\nAndroid SDK        : " + Build.VERSION.SDK_INT +
-                        "\nApp VersionName    : " + versionName +
-                        "\nApp VersionCode    : " + versionCode +
-                        "\n************* Log Head ****************\n\n";
+                final String head = "************* Log Head ****************" + "\nTime Of Crash      : " + time + "\nDevice Manufacturer: " + Build.MANUFACTURER + "\nDevice Model       : " + Build.MODEL + "\nAndroid Version    : " + Build.VERSION.RELEASE + "\nAndroid SDK        : " + Build.VERSION.SDK_INT + "\nApp VersionName    : " + versionName + "\nApp VersionCode    : " + versionCode + "\n************* Log Head ****************\n\n";
                 sb.append(head).append(ThrowableUtils.getFullStackTrace(e));
                 final String crashInfo = sb.toString();
                 final String fullPath = (dir == null ? defaultDir : dir) + time + ".txt";
@@ -209,17 +202,13 @@ public class CrashUtils
         Thread.setDefaultUncaughtExceptionHandler(UNCAUGHT_EXCEPTION_HANDLER);
     }
 
-    ///////////////////////////////////////////////////////////////////////////
-    // interface
-    ///////////////////////////////////////////////////////////////////////////
+
     public interface OnCrashListener
     {
         void onCrash(String crashInfo, Throwable e);
     }
 
-    ///////////////////////////////////////////////////////////////////////////
-    // other utils methods
-    ///////////////////////////////////////////////////////////////////////////
+
     private static void input2File(final String input, final String filePath)
     {
         Future<Boolean> submit = Executors.newSingleThreadExecutor().submit(new Callable<Boolean>()
@@ -278,6 +267,7 @@ public class CrashUtils
             return file.isFile();
         if (!createOrExistsDir(file.getParentFile()))
             return false;
+
         try
         {
             return file.createNewFile();
@@ -298,6 +288,7 @@ public class CrashUtils
     {
         if (s == null)
             return true;
+
         for (int i = 0, len = s.length(); i < len; ++i)
         {
             if (!Character.isWhitespace(s.charAt(i)))
@@ -305,6 +296,7 @@ public class CrashUtils
                 return false;
             }
         }
+
         return true;
     }
 }

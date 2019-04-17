@@ -9,7 +9,7 @@ import com.dragon.myreadhub.MyReadHub;
  * @author：gonghe
  * @time 2019/4/9
  */
-public class AppLogMessage
+public class AppLogUtil
 {
     private static final int VERBOSE = 1;
 
