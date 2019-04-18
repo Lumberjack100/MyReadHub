@@ -1,6 +1,7 @@
 package com.dragon.myreadhub.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,8 @@ public class NewsFragment extends BaseFragment
 
     @BindView(R.id.textResponse)
     TextView textResponse;
+
+    private Handler mHandler = new Handler();
 
 
     public NewsFragment()
@@ -87,7 +90,7 @@ public class NewsFragment extends BaseFragment
 
                 try
                 {
-                    testOkhttp("https://raw.github.com/square/okhttp/master/README.md");
+                    testOkhttp("https://blog.csdn.net/lmj623565791/article/details/47911083");
                 }
                 catch (IOException e)
                 {
@@ -107,11 +110,6 @@ public class NewsFragment extends BaseFragment
 
         Request request = new Request.Builder().url(url).build();
 
-//        try (Response response = mOkHttpClient.newCall(request).execute())
-//        {
-//            return response.body().string();
-//        }
-
         Call call = mOkHttpClient.newCall(request);
         call.enqueue(new Callback()
         {
@@ -125,7 +123,15 @@ public class NewsFragment extends BaseFragment
             public void onResponse(Call call, Response response) throws IOException
             {
                 String responseStr = response.body().string();
-                textResponse.setText(responseStr);
+
+                mHandler.post(new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        textResponse.setText(responseStr);
+                    }
+                });
             }
         });
     }

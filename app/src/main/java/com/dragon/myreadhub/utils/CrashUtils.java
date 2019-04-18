@@ -80,9 +80,18 @@ public class CrashUtils
 
                 final String time = FORMAT.format(new Date(System.currentTimeMillis()));
                 final StringBuilder sb = new StringBuilder();
-                final String head = "************* Log Head ****************" + "\nTime Of Crash      : " + time + "\nDevice Manufacturer: " + Build.MANUFACTURER + "\nDevice Model       : " + Build.MODEL + "\nAndroid Version    : " + Build.VERSION.RELEASE + "\nAndroid SDK        : " + Build.VERSION.SDK_INT + "\nApp VersionName    : " + versionName + "\nApp VersionCode    : " + versionCode + "\n************* Log Head ****************\n\n";
+                final String head = "\n************* Log Head ****************"
+                        + "\nTime Of Crash      : " + time
+                        + "\nDevice Manufacturer: " + Build.MANUFACTURER
+                        + "\nDevice Model       : " + Build.MODEL
+                        + "\nAndroid Version    : " + Build.VERSION.RELEASE
+                        + "\nAndroid SDK        : " + Build.VERSION.SDK_INT
+                        + "\nApp VersionName    : " + versionName
+                        + "\nApp VersionCode    : " + versionCode
+                        + "\n************* Log Head ****************\n\n";
                 sb.append(head).append(ThrowableUtils.getFullStackTrace(e));
                 final String crashInfo = sb.toString();
+
                 final String fullPath = (dir == null ? defaultDir : dir) + time + ".txt";
                 if (createOrExistsFile(fullPath))
                 {
@@ -92,6 +101,8 @@ public class CrashUtils
                 {
                     Log.e("CrashUtils", "create " + fullPath + " failed!");
                 }
+
+                AppLogUtil.logERROR(GlobalUtil.GlobalLogTag, crashInfo);
 
                 if (sOnCrashListener != null)
                 {

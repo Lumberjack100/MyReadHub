@@ -69,6 +69,14 @@ public class AppLogUtil
         }
     }
 
+    public static void logERROR(String tag, String msg)
+    {
+        if (level <= ERROR)
+        {
+            Log.e(tag, msg != null ? msg : "");
+        }
+    }
+
     public static void logERROR(String tag, String msg, Throwable throwable)
     {
         if (level <= ERROR)

@@ -25,6 +25,8 @@ public class GlobalUtil
 
     private Toast toast = null;
 
+    public static final String GlobalLogTag = "MyReadHub";
+
     /**
      * 获取当前应用程序的包名。
      *
