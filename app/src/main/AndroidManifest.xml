@@ -21,21 +21,36 @@
             android:supportsRtl="true"
             android:theme="@style/MyReadHub"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.RxJavaTestActivity">
+        <activity
+                android:name=".activity.LayoutTestActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".activity.AboutActivity">
+
+        <activity
+                android:name=".activity.AboutActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".activity.NotificationActivity">
+
+        <activity
+                android:name=".activity.NotificationActivity"
+                android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".activity.SplashActivity">
+
+        <activity
+                android:name=".activity.SplashActivity"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity">
+
+        <activity
+                android:name=".activity.MainActivity"
+                android:screenOrientation="portrait">
         </activity>
+
     </application>
 
 </manifest>

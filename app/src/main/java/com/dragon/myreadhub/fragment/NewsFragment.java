@@ -11,6 +11,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.dragon.myreadhub.R;
+import com.dragon.myreadhub.activity.LayoutTestActivity;
 import okhttp3.*;
 
 import java.io.IOException;
@@ -88,14 +89,17 @@ public class NewsFragment extends BaseFragment
         {
             case R.id.btnTest:
 
-                try
-                {
-                    testOkhttp("https://blog.csdn.net/lmj623565791/article/details/47911083");
-                }
-                catch (IOException e)
-                {
-                    e.printStackTrace();
-                }
+//                try
+//                {
+//                    testOkhttp("https://blog.csdn.net/lmj623565791/article/details/47911083");
+//                }
+//                catch (IOException e)
+//                {
+//                    e.printStackTrace();
+//                }
+//
+
+                LayoutTestActivity.startActivity(getActivity());
                 break;
 
             default:
