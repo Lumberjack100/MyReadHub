@@ -11,6 +11,16 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'//,'armeabi'
+        }
+
+
+        buildConfigField "String", "BUGLY_APPKEY", "\"3bbb09f211\""
     }
 
     buildTypes {
@@ -31,22 +41,26 @@ dependencies {
     implementation "com.android.support:design:${libs.supportVersion}"
     implementation "com.android.support:appcompat-v7:${libs.supportVersion}"
     implementation "com.android.support:recyclerview-v7:${libs.supportVersion}"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    //多Dex支持
+    implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.jakewharton:butterknife:8.8.1'//View注入框架
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'//View注入框架
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.github.bumptech.glide:glide:4.8.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'//View注入框架
+
     //处理Android 6.0系统中的运行时权限
-    //Requesting runtime permissions on Android 6.0 or higher. Sharing private files on Android 7.0 or higher.
-    //Installing unknown source apk on Android 8.0 or higher.android.permission.REQUEST_INSTALL_PACKAGES
-    //Drawing at the top of other apps on Android 6.0 or higher.android.permission.SYSTEM_ALERT_WINDOW.
+    //Requesting runtime permissions on Android 6.0 or higher. Sharing private files on Android 7.0 or higher.Installing unknown source apk on Android 8.0 or higher.android.permission.REQUEST_INSTALL_PACKAGES. Drawing at the top of other apps on Android 6.0 or higher.android.permission.SYSTEM_ALERT_WINDOW.
     implementation 'com.yanzhenjie:permission:2.0.0-rc12'
     implementation 'org.greenrobot:eventbus:3.1.1'
     implementation 'com.squareup.okhttp3:okhttp:3.14.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"//使用 kotlin
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+    //Bugly异常上报和升级
+    implementation 'com.tencent.bugly:crashreport_upgrade:1.3.8'
 
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
