@@ -11,6 +11,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.dragon.myreadhub.R;
+import com.dragon.myreadhub.activity.AboutActivity;
 import com.dragon.myreadhub.activity.LayoutTestActivity;
 import okhttp3.*;
 
@@ -82,7 +83,7 @@ public class NewsFragment extends BaseFragment
     }
 
 
-    @OnClick({R.id.btnTest})
+    @OnClick({R.id.btnTest,R.id.textResponse})
     public void onClick(View v)
     {
         switch (v.getId())
@@ -100,6 +101,21 @@ public class NewsFragment extends BaseFragment
 //
 
                 LayoutTestActivity.startActivity(getActivity());
+                break;
+
+            case R.id.textResponse:
+
+//                try
+//                {
+//                    testOkhttp("https://blog.csdn.net/lmj623565791/article/details/47911083");
+//                }
+//                catch (IOException e)
+//                {
+//                    e.printStackTrace();
+//                }
+//
+
+                AboutActivity.startActivity(getActivity());
                 break;
 
             default:
